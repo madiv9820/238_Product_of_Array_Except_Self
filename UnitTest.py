@@ -6,12 +6,12 @@ class UnitTest(unittest.TestCase):
     def setUp(self):
         self.__testcases = {
             'test_case_basic_positive_numbers': ([1,2,3,4], [24,12,8,6]),
-            'test_case_contains_zero': ([-1,1,0,3,3], [0,0,9,0,0]),
+            'test_case_contains_zero': ([-1,1,0,3,3], [0,0,-9,0,0]),
             'test_case_all_ones': ([1,1,1,1], [1,1,1,1]),
             'test_case_all_zeros': ([0,0,0], [0,0,0]),
             'test_case_single_zero_in_array': ([2,4,0,8], [0,0,64,0]),
             'test_case_all_negative_numbers': ([-1,-2,-3,-4], [-24,-12,-8,-6]),
-            'test_case_mixed_positives_and_negatives': ([3,-2,5,-1], [10,-15,-6,30]),
+            'test_case_mixed_positives_and_negatives': ([3,-2,5,-1], [10,-15,6,-30]),
             'test_case_duplicates_in_array': ([2,3,2,4], [24,16,24,12]),
             'test_case_two_elements': ([5,6], [6,5])
         }
@@ -72,4 +72,4 @@ class UnitTest(unittest.TestCase):
         result = self.__solution.productExceptSelf(nums)
         self.assertTrue(all(r == o for r, o in zip(result, output)))
 
-if __name__ == '__main__': unittest.TestCase()
+if __name__ == '__main__': unittest.main()
